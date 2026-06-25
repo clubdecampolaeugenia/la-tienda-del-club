@@ -31,65 +31,29 @@
     .screen { display: none; flex-direction: column; width: 100%; max-width: 480px; }
     .screen.active { display: flex; }
 
-    /* ── TOLDO IMAGEN pantallas internas ── */
-    .toldo-interno {
-      width: 100%;
-      display: block;
-      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.5));
-      line-height: 0;
-    }
+    /* TOLDO INTERNO */
+    .toldo-interno { width: 100%; display: block; filter: drop-shadow(0 6px 12px rgba(0,0,0,0.5)); line-height: 0; }
     .toldo-interno img { width: 100%; display: block; }
 
-    /* ── TOPBAR ── */
-    .topbar {
-      background: var(--petroleo);
-      padding: 11px 16px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      width: 100%;
-    }
-    .topbar-back {
-      background: none;
-      border: none;
-      color: var(--lima);
-      font-size: 14px;
-      font-family: Impact, sans-serif;
-      letter-spacing: 1px;
-      cursor: pointer;
-      padding: 0;
-      line-height: 1;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-    .topbar-title {
-      font-family: Impact, sans-serif;
-      font-size: 17px;
-      color: var(--hueso);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      flex: 1;
-      text-align: right;
-    }
+    /* TOPBAR */
+    .topbar { background: var(--petroleo); padding: 11px 16px; display: flex; align-items: center; gap: 10px; width: 100%; }
+    .topbar-back { background: none; border: none; color: var(--lima); font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer; padding: 0; line-height: 1; white-space: nowrap; }
+    .topbar-title { font-family: 'Roboto', sans-serif; font-size: 14px; font-weight: 700; color: var(--hueso); flex: 1; text-align: right; text-transform: uppercase; letter-spacing: 1px; }
 
-    /* ── HERO ── */
+    /* HERO */
     .hero { background: var(--petroleo); position: relative; width: 100%; }
     .toldo-img { width: 100%; display: block; filter: drop-shadow(0 8px 16px rgba(0,0,0,0.55)); }
-    .hero-body { padding: 12px 0 28px; position: relative; }
+    .hero-body { padding: 14px 0 28px; }
 
-    /* BADGE Club de Campo */
-    .hero-badge {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 10px;
-    }
+    /* BADGE lima */
+    .hero-badge { display: flex; justify-content: center; margin-bottom: 12px; }
     .hero-badge-inner {
-      background: var(--naranja);
-      border: 2px solid var(--petroleo);
+      background: var(--lima);
       border-radius: 6px;
-      padding: 6px 18px;
-      font-family: Impact, sans-serif;
+      padding: 6px 20px;
+      font-family: 'Roboto', sans-serif;
       font-size: 12px;
+      font-weight: 400;
       letter-spacing: 2px;
       color: var(--petroleo);
       text-transform: uppercase;
@@ -99,16 +63,15 @@
     .hero-desc { color: var(--hueso); font-size: 13px; line-height: 1.7; margin-top: 14px; margin-bottom: 8px; padding: 0 18px; }
     .hero-inst { color: var(--lima); font-size: 12px; font-style: italic; line-height: 1.6; padding: 0 18px; }
 
-    /* ── SECCIONES ── */
+    /* SECCIONES */
     .sec-crema    { background: var(--hueso);    padding: 20px 16px; width: 100%; }
     .sec-petroleo { background: var(--petroleo); padding: 20px 16px; width: 100%; }
-
     .sec-title       { font-family: Impact, sans-serif; font-size: 18px; color: var(--petroleo); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 2px; }
     .sec-sub         { font-size: 10px; color: var(--gris); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; }
     .sec-title-light { font-family: Impact, sans-serif; font-size: 18px; color: var(--lima); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 2px; }
     .sec-sub-light   { font-size: 10px; color: var(--verdecl); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; }
 
-    /* ── GRILLA ── */
+    /* GRILLA */
     .grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; margin-bottom: 14px; }
     .cajon { background: var(--blanco); border: 2px solid var(--petroleo); border-radius: 10px; padding: 14px 10px 12px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 6px; position: relative; }
     .cajon-foto   { font-size: 32px; }
@@ -120,7 +83,7 @@
     .badge-sin    { position: absolute; top: 7px; right: 7px; background: #c0392b; color: #fff; font-size: 8px; font-weight: 700; padding: 2px 6px; border-radius: 10px; }
     .espera-btn   { background: transparent; border: 1.5px solid #888; border-radius: 8px; font-size: 10px; color: #666; padding: 5px; cursor: pointer; width: 100%; }
 
-    /* ── CARRITO ── */
+    /* CARRITO */
     .cart-bar { background: var(--naranja); border: 2px solid var(--petroleo); border-radius: 12px; padding: 14px; }
     .cart-bar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
     .cart-bar-title  { font-family: Impact, sans-serif; font-size: 14px; color: var(--petroleo); letter-spacing: 1px; text-transform: uppercase; }
@@ -128,19 +91,25 @@
     .cart-empty      { font-size: 12px; color: var(--petroleo); opacity: .6; text-align: center; padding: 6px 0; }
     .cart-item       { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
     .cart-item-nombre{ font-size: 12px; color: var(--petroleo); font-weight: 700; flex: 1; line-height: 1.3; }
-    .cart-ctrl       { display: flex; align-items: center; gap: 8px; }
-    .cart-ctrl button{ background: var(--petroleo); color: var(--naranja); border: none; border-radius: 50%; width: 32px; height: 32px; font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .cart-ctrl       { display: flex; align-items: center; gap: 6px; }
+    .cart-ctrl button{
+      background: var(--petroleo); color: var(--naranja);
+      border: none; border-radius: 50%;
+      width: 32px; height: 32px;
+      font-family: 'Roboto', sans-serif; font-size: 20px; font-weight: 700; line-height: 1;
+      cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
     .cart-ctrl span  { font-size: 14px; font-weight: 700; color: var(--petroleo); min-width: 20px; text-align: center; }
     .btn-confirmar { display: block; width: 100%; background: var(--petroleo); color: var(--naranja); font-family: Impact, sans-serif; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; padding: 14px; border-radius: 10px; border: 2px solid var(--petroleo); cursor: pointer; text-align: center; margin-top: 12px; }
 
-    /* RESUMEN CARRITO en pantallas internas */
+    /* RESUMEN CARRITO */
     .cart-resumen { background: var(--naranja); border: 2px solid var(--petroleo); border-radius: 10px; padding: 12px 14px; margin-bottom: 16px; }
     .cart-resumen-title { font-family: Impact, sans-serif; font-size: 12px; color: var(--petroleo); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; display: flex; justify-content: space-between; }
     .cart-resumen-item  { font-size: 11px; color: var(--petroleo); display: flex; justify-content: space-between; margin-bottom: 3px; }
     .cart-resumen-total { font-family: Impact, sans-serif; font-size: 14px; color: var(--petroleo); display: flex; justify-content: space-between; border-top: 1.5px solid var(--petroleo); padding-top: 6px; margin-top: 6px; }
 
-    /* ── BOTONES UNIFICADOS ── */
-    .btn { display: block; width: 100%; font-family: Impact, sans-serif; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; padding: 14px; border-radius: 10px; border: 2px solid var(--petroleo); cursor: pointer; text-align: center; text-decoration: none; transition: opacity .15s, transform .08s; line-height: 1; margin-bottom: 0; }
+    /* BOTONES UNIFICADOS */
+    .btn { display: block; width: 100%; font-family: Impact, sans-serif; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; padding: 14px; border-radius: 10px; border: 2px solid var(--petroleo); cursor: pointer; text-align: center; text-decoration: none; transition: opacity .15s, transform .08s; line-height: 1; }
     .btn:active { transform: scale(0.97); }
     .btn-naranja  { background: var(--naranja); color: var(--petroleo); border-color: var(--petroleo); }
     .btn-cgv      { background: var(--lima);    color: var(--petroleo); border-color: var(--petroleo); }
@@ -149,7 +118,7 @@
     .btn-garita   { background: var(--blanco);  color: var(--petroleo); border-color: var(--petroleo); }
     .btn-garita:active { background: var(--naranja); }
 
-    /* ── FORMS ── */
+    /* FORMS */
     .form-group { margin-bottom: 14px; }
     .form-label { display: block; font-size: 10px; font-weight: 700; color: var(--gris); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
     .form-input { width: 100%; padding: 11px 13px; border: 2px solid var(--gris); border-radius: 8px; font-family: 'Roboto', sans-serif; font-size: 14px; color: var(--petroleo); background: var(--blanco); outline: none; transition: border-color .2s; }
@@ -160,7 +129,7 @@
     .tel-pais:focus { border-color: var(--naranja); }
     .tel-num   { flex: 1; min-width: 0; }
 
-    /* ── PAGO ── */
+    /* PAGO */
     .pago-opt { background: var(--blanco); border: 2px solid #dde8dd; border-radius: 10px; padding: 14px; margin-bottom: 12px; cursor: pointer; display: flex; align-items: flex-start; gap: 12px; }
     .pago-opt.selected { border-color: var(--petroleo); }
     .pago-radio { width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--gris); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
@@ -174,17 +143,26 @@
     .banco-label { font-size: 10px; color: var(--verdecl); letter-spacing: 1px; }
     .banco-val   { font-size: 12px; font-weight: 700; color: var(--lima); font-family: monospace; }
 
-    /* ── CONFIRMACIÓN ── */
+    /* CONFIRMACIÓN */
+    .confirm-intro {
+      font-size: 13px; color: var(--hueso); line-height: 1.7;
+      margin-bottom: 16px; text-align: center;
+    }
+    .confirm-intro strong { color: var(--lima); }
+
     .confirm-card { background: var(--blanco); border-radius: 14px; padding: 20px; margin-bottom: 14px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.2); }
-    .confirm-brand { display: flex; flex-direction: column; align-items: center; margin-bottom: 14px; gap: 8px; }
-    .confirm-brand img { width: 88px; height: 88px; }
-    .confirm-brand-text { font-family: 'Playfair Display', Georgia, serif; font-size: 21px; color: var(--petroleo); }
+    .confirm-brand { display: flex; flex-direction: column; align-items: center; margin-bottom: 10px; gap: 4px; }
+    .confirm-brand img { width: 88px; height: 88px; object-fit: contain; }
+    .confirm-brand-text { font-family: Impact, sans-serif; font-size: 18px; color: #000; letter-spacing: 2px; text-transform: uppercase; }
     .confirm-numero  { font-family: Impact, sans-serif; font-size: 36px; color: var(--petroleo); letter-spacing: 3px; margin-bottom: 6px; }
     .confirm-badge   { display: inline-block; background: var(--lima); color: var(--petroleo); font-size: 10px; font-weight: 700; letter-spacing: 2px; padding: 4px 14px; border-radius: 20px; margin-bottom: 14px; }
-    .confirm-detalle { font-size: 12px; color: var(--gris); line-height: 1.9; text-align: left; }
-    .confirm-detalle strong { color: var(--petroleo); }
 
-    /* Aviso cancelación — verde claro */
+    /* Detalle ticket */
+    .ticket-detalle { text-align: left; font-size: 12px; color: var(--gris); line-height: 1.9; }
+    .ticket-detalle strong { color: var(--petroleo); }
+    .ticket-sep { border: none; border-top: 1.5px solid #e0e0e0; margin: 10px 0; }
+
+    /* Aviso cancelación */
     .confirm-aviso {
       background: var(--verdecl);
       border-radius: 10px;
@@ -193,11 +171,35 @@
       color: var(--petroleo);
       line-height: 1.6;
       margin-bottom: 14px;
-      text-align: left;
     }
-    .confirm-aviso-texto { margin-bottom: 12px; }
+    .confirm-aviso p { margin-bottom: 12px; }
 
-    /* ── GARITA ── */
+    /* POPUP */
+    .popup-overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.75);
+      display: none; align-items: center; justify-content: center;
+      padding: 24px; z-index: 999;
+      animation: fadeIn .25s ease;
+    }
+    .popup-overlay.show { display: flex; }
+    @keyframes fadeIn  { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+    .popup-box {
+      background: var(--hueso);
+      border-radius: 16px;
+      padding: 28px 22px;
+      max-width: 360px; width: 100%;
+      text-align: center;
+      box-shadow: 0 10px 32px rgba(0,0,0,0.4);
+    }
+    .popup-icono { font-size: 40px; margin-bottom: 8px; }
+    .popup-titulo { font-family: Impact, sans-serif; font-size: 18px; color: var(--petroleo); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+    .popup-texto { font-size: 13px; color: var(--petroleo); line-height: 1.6; margin-bottom: 20px; }
+    .popup-btn-si  { display: block; width: 100%; background: var(--petroleo); color: var(--naranja); font-family: Impact, sans-serif; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; padding: 14px; border-radius: 10px; border: none; cursor: pointer; margin-bottom: 10px; }
+    .popup-btn-no  { display: block; width: 100%; background: transparent; color: var(--petroleo); font-family: 'Roboto', sans-serif; font-size: 13px; font-weight: 700; padding: 10px; border-radius: 10px; border: 2px solid var(--petroleo); cursor: pointer; }
+
+    /* GARITA */
     .aviso-garita { background: #fff3cc; border: 1px solid var(--naranja); border-radius: 10px; padding: 11px 13px; font-size: 12px; color: #8B6914; line-height: 1.5; margin-bottom: 16px; }
     .pedido-card  { background: var(--blanco); border-radius: 10px; padding: 13px; margin-bottom: 10px; border-left: 4px solid var(--naranja); }
     .pedido-card.transf { border-left-color: var(--lima); }
@@ -211,7 +213,7 @@
     .pedido-btn { flex: 1; padding: 7px; border-radius: 7px; border: 1.5px solid var(--petroleo); background: transparent; color: var(--petroleo); font-size: 10px; font-weight: 700; cursor: pointer; text-align: center; text-transform: uppercase; }
     .pedido-btn.entregar { background: var(--petroleo); color: var(--naranja); }
 
-    /* ── ADMIN ── */
+    /* ADMIN */
     .tabs-admin { display: flex; background: var(--petroleo); border-bottom: 2px solid var(--lima); }
     .tab-a { flex: 1; padding: 11px; text-align: center; font-size: 10px; font-weight: 700; letter-spacing: 1px; color: var(--gris); cursor: pointer; border-bottom: 2px solid transparent; text-transform: uppercase; }
     .tab-a.on { color: var(--lima); border-bottom-color: var(--lima); }
@@ -234,7 +236,7 @@
       <div class="hero-badge">
         <div class="hero-badge-inner">La Eugenia · Club de Campo</div>
       </div>
-      <img class="hero-logo" src="https://i.imgur.com/MZtSOaL.png" alt="Mercadito Online">
+      <img class="hero-logo" src="https://i.imgur.com/Ozc2v2v.png" alt="Mercadito Online">
       <p class="hero-desc">El Mercadito online del Club pone a disposición de los socios productos que representan un aporte individual y, al mismo tiempo, una contribución colectiva para seguir mejorando nuestro entorno.</p>
       <p class="hero-inst">Elegí los productos disponibles, realizá tu pedido y retiralo en la garita.</p>
     </div>
@@ -292,13 +294,7 @@
     </div>
   </div>
 
-  <div class="sec-crema" style="text-align:center;">
-    <div class="sec-title">¿TENÉS DUDAS?</div>
-    <div class="sec-sub">El personal de garita te ayuda</div>
-    <button class="btn btn-garita" id="btn-garita-home">📲 ESCRIBIR A GARITA</button>
-  </div>
-
-  <div class="sec-petroleo" style="text-align:center;">
+  <div class="sec-petroleo" style="text-align:center; padding-top:0;">
     <a class="btn btn-cgv" href="https://clubdecampolaeugenia.taplink.site/" target="_top">IR AL CENTRO DE GESTIÓN VECINAL</a>
   </div>
 
@@ -376,7 +372,7 @@
         <div class="banco-row"><span class="banco-label">CBU</span><span class="banco-val">1910229855022900048696</span></div>
         <div class="banco-row"><span class="banco-label">CUIT</span><span class="banco-val">30-63417128-9</span></div>
       </div>
-      <p style="font-size:12px;color:var(--gris);line-height:1.6;margin-bottom:12px;">Transferí el monto exacto y luego tocá el botón para notificar a garita.</p>
+      <p style="font-size:12px;color:var(--gris);line-height:1.6;margin-bottom:12px;">Transferí el monto exacto y luego confirmá el pedido para notificar a garita.</p>
     </div>
     <button class="btn btn-naranja" id="btn-pagar" onclick="confirmar()">CONFIRMAR PEDIDO →</button>
   </div>
@@ -387,28 +383,34 @@
   <div class="toldo-interno"><img src="https://i.imgur.com/o7CE0ga.png" alt=""></div>
   <div class="topbar">
     <button class="topbar-back" onclick="goTo('s-home')">← Volver al inicio</button>
-    <span class="topbar-title">Pedido confirmado</span>
+    <span class="topbar-title">Tu pedido</span>
   </div>
   <div class="sec-petroleo" style="flex:1; padding:20px 16px;">
+
+    <p class="confirm-intro" id="confirm-intro-texto"></p>
+
     <div class="confirm-card">
       <div class="confirm-brand">
         <img src="https://i.imgur.com/Ks7x1sS.png" alt="Mercadito Online La Eugenia">
-        <span class="confirm-brand-text">Mercadito Online</span>
+        <span class="confirm-brand-text">TIENDA ONLINE</span>
       </div>
-      <div style="font-size:11px;color:var(--gris);margin-bottom:4px;letter-spacing:1px;text-transform:uppercase;">Tu número de pedido</div>
+      <div style="font-size:11px;color:var(--gris);margin-bottom:4px;letter-spacing:1px;text-transform:uppercase;">Número de pedido</div>
       <div class="confirm-numero" id="num-ped">MO-00001</div>
       <div class="confirm-badge" id="badge-tipo">EFECTIVO</div>
-      <div class="confirm-detalle" id="det-confirm"></div>
+      <div class="ticket-detalle" id="det-confirm"></div>
+      <hr class="ticket-sep" style="margin-top:14px;margin-bottom:10px;">
+      <button class="btn btn-naranja" id="btn-wsp-confirm" style="font-size:13px;">📲 ENVIATE LOS DATOS POR WHATSAPP</button>
     </div>
 
-    <button class="btn btn-naranja" id="btn-wsp-confirm">📲 ENVIATE LOS DATOS DEL PEDIDO POR WHATSAPP</button>
-    <div class="gap"></div>
-
-    <!-- Aviso + cancelar adentro del card verde -->
     <div class="confirm-aviso">
-      <div class="confirm-aviso-texto">⚠️ Este pedido reserva productos del stock. Si no pudiste transferir o simplemente querés cancelarlo, hacelo ahora. Una vez que salgas de esta pantalla deberás acercarte a garita en persona.</div>
-      <button class="btn btn-blanco" onclick="cancelarPedido()">CANCELAR PEDIDO</button>
+      <p>⚠️ Tus productos están reservados. Si necesitás cancelar este pedido, hacelo ahora con el botón de abajo — una vez que salgas de esta pantalla, deberás acercarte personalmente a garita.</p>
+      <button class="btn btn-blanco" onclick="mostrarPopupCancelar()">CANCELAR PEDIDO</button>
     </div>
+
+    <div class="gap"></div>
+    <p style="font-size:11px;color:var(--verdecl);text-align:center;line-height:1.6;">Para cualquier particularidad en el retiro podés contactar a la garita.</p>
+    <div class="gap"></div>
+    <button class="btn btn-garita" id="btn-garita-ticket">📲 ESCRIBIR A GARITA</button>
 
   </div>
 </div>
@@ -473,7 +475,7 @@
     <div class="pedido-card">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
         <div class="pedido-num">MO-00043</div>
-        <span class="pedido-estado est-pend">Efectivo · 47 hs</span>
+        <span class="pedido-estado est-pend">Efectivo · vence 26/06</span>
       </div>
       <div class="pedido-socio">Ana Torres · Lote B23</div>
       <div class="pedido-items">1× Ponchada media sombra</div>
@@ -555,6 +557,17 @@
   </div>
 </div>
 
+<!-- POPUP CANCELAR -->
+<div class="popup-overlay" id="popup-cancelar">
+  <div class="popup-box">
+    <div class="popup-icono">🗑️</div>
+    <div class="popup-titulo">Cancelar pedido</div>
+    <p class="popup-texto">¿Estás seguro? El pedido se eliminará y los productos volverán al stock.</p>
+    <button class="popup-btn-si" onclick="ejecutarCancelacion()">SÍ, CANCELAR PEDIDO</button>
+    <button class="popup-btn-no" onclick="cerrarPopup('popup-cancelar')">No, volver al ticket</button>
+  </div>
+</div>
+
 <script>
   var carrito = [];
   var pedNum  = 1;
@@ -598,10 +611,10 @@
       html += '<div class="cart-item">' +
         '<div class="cart-item-nombre">' + item.nombre + '</div>' +
         '<div class="cart-ctrl">' +
-        '<button onclick="quitarUno(' + idx + ')">−</button>' +
+        '<button onclick="quitarUno(' + idx + ')">&#8722;</button>' +
         '<span>' + item.qty + '</span>' +
-        '<button onclick="agregarUno(' + idx + ')">+</button>' +
-        '<button onclick="eliminar(' + idx + ')">✕</button>' +
+        '<button onclick="agregarUno(' + idx + ')">&#43;</button>' +
+        '<button onclick="eliminar(' + idx + ')">&#10005;</button>' +
         '</div></div>';
     });
     lista.innerHTML = html;
@@ -634,41 +647,89 @@
     document.getElementById('btn-pagar').textContent = tipo === 'tr' ? 'YA TRANSFERÍ →' : 'CONFIRMAR PEDIDO →';
   }
 
+  function fechaVencimiento() {
+    var d = new Date();
+    d.setDate(d.getDate() + 2);
+    return d.getDate().toString().padStart(2,'0') + '/' +
+           (d.getMonth()+1).toString().padStart(2,'0') + '/' +
+           d.getFullYear();
+  }
+
   function confirmar() {
     var num    = 'MO-' + String(pedNum).padStart(5,'0'); pedNum++;
     var nombre = document.getElementById('inp-nombre').value.trim() || '—';
     var lote   = document.getElementById('inp-lote').value.trim() || '—';
     var total  = carrito.reduce(function(a,i){ return a + i.precio*i.qty; }, 0);
-    var items  = carrito.map(function(i){ return i.qty + '× ' + i.nombre; });
-    var pickup = pagoSel === 'ef' ? 'Reservado 48 hs' : 'Sin vencimiento';
+    var items  = carrito.map(function(i){ return { nombre: i.nombre, qty: i.qty, precio: i.precio }; });
+    var vence  = fechaVencimiento();
 
-    datosConfirm = { num: num, nombre: nombre, lote: lote, total: total, items: items, pago: pagoSel, pickup: pickup };
+    datosConfirm = { num: num, nombre: nombre, lote: lote, total: total, items: items, pago: pagoSel, vence: vence };
 
     document.getElementById('num-ped').textContent = num;
     document.getElementById('badge-tipo').textContent = pagoSel === 'ef' ? 'EFECTIVO' : 'TRANSFERENCIA';
+
+    // Intro texto
+    var intro = '¡Tu compra está confirmada! A continuación encontrás tu ticket de pedido. ' +
+      'Podés enviártelo por WhatsApp o hacer una captura de pantalla para mostrárselo al guardia al retirar.';
+    if (pagoSel === 'ef') {
+      intro += ' <strong>Tus productos están reservados hasta el ' + vence + ' (inclusive).</strong>';
+    }
+    document.getElementById('confirm-intro-texto').innerHTML = intro;
+
+    // Ticket detalle
+    var itemsHtml = items.map(function(i){
+      return '<div style="display:flex;justify-content:space-between;">' +
+        '<span>' + i.qty + '× ' + i.nombre + '</span>' +
+        '<span>$ ' + (i.precio * i.qty).toLocaleString('es-AR') + '</span>' +
+        '</div>';
+    }).join('');
+
+    var pickup = pagoSel === 'ef'
+      ? 'Reservado hasta el ' + vence + ' (inclusive)'
+      : 'Sin vencimiento';
+
     document.getElementById('det-confirm').innerHTML =
-      '<strong>Socio:</strong> ' + nombre + ' · Lote ' + lote + '<br>' +
-      '<strong>Productos:</strong> ' + items.join(', ') + '<br>' +
-      '<strong>Forma de pago:</strong> ' + (pagoSel === 'ef' ? 'Efectivo al retirar' : 'Transferencia bancaria') + '<br>' +
-      '<strong>Pick up:</strong> ' + pickup;
+      itemsHtml +
+      '<hr class="ticket-sep">' +
+      '<div style="display:flex;justify-content:space-between;margin-bottom:4px;"><strong>Total</strong><strong>$ ' + total.toLocaleString('es-AR') + '</strong></div>' +
+      '<div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span>Socio</span><span>' + nombre + ' · Lote ' + lote + '</span></div>' +
+      '<div style="display:flex;justify-content:space-between;margin-bottom:4px;"><span>Forma de pago</span><span>' + (pagoSel === 'ef' ? 'Efectivo' : 'Transferencia') + '</span></div>' +
+      '<div style="display:flex;justify-content:space-between;"><span>Pick up</span><span>' + pickup + '</span></div>';
 
     carrito = []; renderCarrito();
     goTo('s-confirmacion');
 
+    // WhatsApp
     document.getElementById('btn-wsp-confirm').onclick = function() {
-      var msg = '🛒 *Mercadito Online La Eugenia*\n\n' +
+      var itemsTexto = datosConfirm.items.map(function(i){ return i.qty + '× ' + i.nombre + ' — $' + (i.precio*i.qty).toLocaleString('es-AR'); }).join('\n');
+      var msg = '🛒 *Tienda Online — Club de Campo La Eugenia*\n\n' +
         'Pedido: *' + datosConfirm.num + '*\n' +
-        'Socio: ' + datosConfirm.nombre + ' · Lote ' + datosConfirm.lote + '\n' +
-        'Productos: ' + datosConfirm.items.join(', ') + '\n' +
-        'Pago: ' + (datosConfirm.pago === 'ef' ? 'Efectivo al retirar' : 'Transferencia') + '\n' +
-        'Pick up: ' + datosConfirm.pickup + '\n\n' +
+        'Socio: ' + datosConfirm.nombre + ' · Lote ' + datosConfirm.lote + '\n\n' +
+        itemsTexto + '\n\n' +
+        'Total: $' + datosConfirm.total.toLocaleString('es-AR') + '\n' +
+        'Pago: ' + (datosConfirm.pago === 'ef' ? 'Efectivo al retirar' : 'Transferencia bancaria') + '\n' +
+        (datosConfirm.pago === 'ef' ? 'Reservado hasta: ' + datosConfirm.vence + ' (inclusive)' : 'Sin vencimiento') + '\n\n' +
         'Mostrá este número al guardia al retirar 👆';
       window.location.href = 'https://wa.me/?text=' + encodeURIComponent(msg);
     };
+
+    // Botón garita en ticket
+    document.getElementById('btn-garita-ticket').onclick = function() {
+      window.location.href = 'https://wa.me/5493764113300?text=' + encodeURIComponent('Hola, tengo una consulta sobre mi pedido ' + datosConfirm.num + '.');
+    };
   }
 
-  function cancelarPedido() {
-    if (confirm('¿Confirmás que querés cancelar este pedido?')) goTo('s-home');
+  function mostrarPopupCancelar() {
+    document.getElementById('popup-cancelar').classList.add('show');
+  }
+
+  function cerrarPopup(id) {
+    document.getElementById(id).classList.remove('show');
+  }
+
+  function ejecutarCancelacion() {
+    cerrarPopup('popup-cancelar');
+    goTo('s-home');
   }
 
   function showTab(id, el) {
@@ -686,10 +747,6 @@
   }
 
   function soloNumeros(el) { el.value = el.value.replace(/[^0-9]/g,''); }
-
-  document.getElementById('btn-garita-home').addEventListener('click', function(){
-    window.location.href = 'https://wa.me/5493764113300?text=' + encodeURIComponent('Hola, tengo una consulta sobre el Mercadito Online.');
-  });
 </script>
 </body>
 </html>
