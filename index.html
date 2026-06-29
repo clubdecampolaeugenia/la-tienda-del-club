@@ -202,6 +202,19 @@
 
     .footer-bar { background: var(--petroleo); padding: 14px 16px; text-align: center; font-size: 10px; color: var(--gris); letter-spacing: 1.5px; text-transform: uppercase; width: 100%; border-top: 1px solid var(--gris); }
     .gap { height: 12px; }
+
+    /* DEPORBONO */
+    .depo-card { background: var(--hueso); border: 2px solid var(--petroleo); border-radius: 12px; padding: 16px; margin-bottom: 16px; text-align: center; }
+    .depo-badge { display: inline-flex; align-items: center; gap: 5px; background: var(--naranja); color: var(--petroleo); font-size: 9px; font-weight: 700; letter-spacing: 1.5px; padding: 3px 10px; border-radius: 20px; margin-bottom: 10px; text-transform: uppercase; }
+    .depo-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--petroleo); animation: blink 1.2s ease-in-out infinite; }
+    @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:.2;} }
+    .depo-logo { width: 150px; display: block; margin: 0 auto 4px; }
+    .depo-nombre { font-family: 'Roboto', sans-serif; font-size: 11px; font-weight: 700; color: var(--petroleo); letter-spacing: 3px; text-transform: uppercase; }
+    .depo-anio { font-family: Impact, sans-serif; font-size: 22px; color: var(--naranja); letter-spacing: 2px; line-height: 1; margin-bottom: 8px; }
+    .depo-sub { font-size: 11px; color: var(--gris); line-height: 1.5; margin-bottom: 12px; }
+    .depo-btns { display: flex; gap: 8px; }
+    .depo-btn-main { flex: 1; background: var(--petroleo); color: var(--lima); font-family: Impact, sans-serif; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; padding: 10px; border-radius: 8px; border: 2px solid var(--petroleo); cursor: pointer; }
+    .depo-btn-sec  { flex: 1; background: transparent; color: var(--petroleo); font-family: Impact, sans-serif; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; padding: 10px; border-radius: 8px; border: 2px solid var(--petroleo); cursor: pointer; }
   </style>
 </head>
 <body>
@@ -216,6 +229,20 @@
       </div>
       <p class="hero-desc">El Stock del Club facilita a los socios el acceso ágil a una selección de productos e insumos útiles para el cuidado, el orden y la mejora de nuestro entorno</p>
       <p class="hero-inst">Elegí los productos disponibles, realizá tu pedido y retiralo en la garita</p>
+    </div>
+  </div>
+
+  <div class="sec-crema" style="padding-bottom:0;">
+    <div class="depo-card">
+      <div class="depo-badge"><span class="depo-dot"></span> Campaña activa</div>
+      <img class="depo-logo" src="https://i.imgur.com/as0SOAO.png" alt="Deporbono">
+      <div class="depo-nombre">DEPORBONO</div>
+      <div class="depo-anio">2026</div>
+      <div class="depo-sub">Elegí tu número y reservalo desde el Club — disponible por tiempo limitado</div>
+      <div class="depo-btns">
+        <button class="depo-btn-main" onclick="goTo('s-deporbono')">Elegir número</button>
+        <button class="depo-btn-sec" onclick="goTo('s-premios')">Ver premios</button>
+      </div>
     </div>
   </div>
 
@@ -586,6 +613,228 @@
   </div>
 </div>
 
+
+<!-- ══ DEPORBONO — PANTALLA PRINCIPAL ══ -->
+<div class="screen" id="s-deporbono">
+  <div class="toldo-interno"><img src="https://i.imgur.com/AlHgkPH.png" alt=""></div>
+  <div class="topbar">
+    <button class="topbar-back" onclick="goTo('s-home')">← Volver</button>
+    <span class="topbar-title">Deporbono 2026</span>
+  </div>
+  <div class="sec-crema" style="text-align:center;padding-bottom:14px;">
+    <div class="depo-badge" style="margin-bottom:10px;"><span class="depo-dot"></span> Campaña activa</div>
+    <img src="https://i.imgur.com/as0SOAO.png" style="width:160px;display:block;margin:0 auto 4px;">
+    <div class="depo-nombre">DEPORBONO</div>
+    <div class="depo-anio">2026</div>
+    <div style="font-size:11px;color:var(--gris);line-height:1.5;margin-bottom:6px;">Elegí uno o más números entre los asignados al Club, o dejá que el sistema elija por vos</div>
+    <div style="display:inline-block;border:1.5px solid var(--naranja);border-radius:4px;padding:2px 8px;font-size:9px;color:var(--naranja);letter-spacing:1.5px;text-transform:uppercase;font-weight:700;">Edición anual · $5.000 por bono</div>
+  </div>
+  <div class="sec-crema" style="padding-top:0;flex:1;">
+    <div style="background:var(--blanco);border:1.5px solid var(--petroleo);border-radius:10px;padding:12px;cursor:pointer;display:flex;align-items:center;gap:10px;margin-bottom:8px;" onclick="goTo('s-depo-buscar')">
+      <div style="width:36px;height:36px;border-radius:8px;background:var(--petroleo);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">🔍</div>
+      <div><div style="font-size:12px;font-weight:700;color:var(--petroleo);text-transform:uppercase;letter-spacing:.5px;">Buscar un número</div><div style="font-size:10px;color:var(--gris);margin-top:2px;">Consultá si un número específico está disponible</div></div>
+      <span style="margin-left:auto;color:var(--petroleo);font-size:16px;font-weight:700;">›</span>
+    </div>
+    <div style="background:var(--blanco);border:1.5px solid var(--petroleo);border-radius:10px;padding:12px;cursor:pointer;display:flex;align-items:center;gap:10px;margin-bottom:8px;" onclick="goTo('s-depo-grilla')">
+      <div style="width:36px;height:36px;border-radius:8px;background:var(--petroleo);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">🎫</div>
+      <div><div style="font-size:12px;font-weight:700;color:var(--petroleo);text-transform:uppercase;letter-spacing:.5px;">Ver números disponibles</div><div style="font-size:10px;color:var(--gris);margin-top:2px;">Explorá la grilla y elegí el que más te gusta</div></div>
+      <span style="margin-left:auto;color:var(--petroleo);font-size:16px;font-weight:700;">›</span>
+    </div>
+    <div style="background:var(--blanco);border:1.5px solid var(--petroleo);border-radius:10px;padding:12px;cursor:pointer;display:flex;align-items:center;gap:10px;margin-bottom:14px;" onclick="goTo('s-depo-azar')">
+      <div style="width:36px;height:36px;border-radius:8px;background:var(--petroleo);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">🎲</div>
+      <div><div style="font-size:12px;font-weight:700;color:var(--petroleo);text-transform:uppercase;letter-spacing:.5px;">Que el sistema elija</div><div style="font-size:10px;color:var(--gris);margin-top:2px;">Elegí cuántos bonos querés y girá la ruleta</div></div>
+      <span style="margin-left:auto;color:var(--petroleo);font-size:16px;font-weight:700;">›</span>
+    </div>
+    <div id="depo-selbar-main" style="background:var(--verdecl);border:2px solid var(--petroleo);border-radius:10px;padding:12px 14px;">
+      <div style="font-family:Impact,sans-serif;font-size:12px;color:var(--petroleo);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;"><span>Mi selección</span><span id="depo-sel-count" style="font-size:10px;font-weight:400;font-family:Roboto,sans-serif;">0 bonos</span></div>
+      <div id="depo-sel-empty" style="font-size:11px;color:var(--gris);text-align:center;padding:4px 0;">Todavía no elegiste ningún número</div>
+      <div id="depo-sel-items"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ DEPORBONO — GRILLA ══ -->
+<div class="screen" id="s-depo-grilla">
+  <div class="toldo-interno"><img src="https://i.imgur.com/AlHgkPH.png" alt=""></div>
+  <div class="topbar">
+    <button class="topbar-back" onclick="goTo('s-deporbono')">← Volver</button>
+    <span class="topbar-title">Números disponibles</span>
+  </div>
+  <div class="sec-crema" style="flex:1;">
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;">
+      <div style="display:flex;align-items:center;gap:3px;font-size:9px;color:var(--gris);"><div style="width:10px;height:10px;border-radius:2px;background:var(--hueso);border:1.5px solid var(--petroleo);"></div> Disponible</div>
+      <div style="display:flex;align-items:center;gap:3px;font-size:9px;color:var(--gris);"><div style="width:10px;height:10px;border-radius:2px;background:var(--lima);border:1.5px solid var(--petroleo);"></div> Seleccionado</div>
+      <div style="display:flex;align-items:center;gap:3px;font-size:9px;color:var(--gris);"><div style="width:10px;height:10px;border-radius:2px;background:#e8e8e8;border:1.5px solid #bbb;"></div> Agotado</div>
+    </div>
+    <div id="depo-nums-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-bottom:12px;"></div>
+    <div style="background:var(--verdecl);border:2px solid var(--petroleo);border-radius:10px;padding:12px 14px;margin-bottom:10px;">
+      <div style="font-family:Impact,sans-serif;font-size:12px;color:var(--petroleo);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;display:flex;justify-content:space-between;"><span>Mi selección</span><span id="depo-grid-count" style="font-size:10px;font-weight:400;font-family:Roboto,sans-serif;">0 bonos</span></div>
+      <div id="depo-grid-empty" style="font-size:11px;color:var(--gris);text-align:center;">Tocá un número para seleccionarlo</div>
+      <div id="depo-grid-items"></div>
+      <div id="depo-grid-total" style="display:none;font-family:Impact,sans-serif;font-size:15px;color:var(--petroleo);display:none;justify-content:space-between;border-top:1.5px solid var(--petroleo);padding-top:6px;margin-top:8px;"><span>Total</span><span id="depo-grid-monto">$ 0</span></div>
+    </div>
+    <button class="btn btn-naranja" id="depo-grid-btn" style="display:none;" onclick="goTo('s-depo-datos')">Continuar con la reserva →</button>
+  </div>
+</div>
+
+<!-- ══ DEPORBONO — BUSCAR ══ -->
+<div class="screen" id="s-depo-buscar">
+  <div class="toldo-interno"><img src="https://i.imgur.com/AlHgkPH.png" alt=""></div>
+  <div class="topbar">
+    <button class="topbar-back" onclick="goTo('s-deporbono')">← Volver</button>
+    <span class="topbar-title">Buscar número</span>
+  </div>
+  <div class="sec-crema" style="flex:1;">
+    <div style="font-size:12px;color:var(--gris);margin-bottom:10px;line-height:1.5;">Ingresá el número de 5 dígitos que querés consultar</div>
+    <input type="number" id="depo-buscar-input" placeholder="76301" style="width:100%;padding:11px;border:2px solid var(--gris);border-radius:8px;font-size:16px;color:var(--petroleo);background:var(--blanco);outline:none;font-family:Roboto,sans-serif;letter-spacing:2px;text-align:center;font-weight:700;">
+    <div style="margin-top:10px;margin-bottom:4px;"><button class="btn btn-naranja" onclick="depoBuscar()">Consultar</button></div>
+    <div id="depo-res-ok" style="display:none;background:#e8f5e8;border:1.5px solid #2d6e30;border-radius:8px;padding:10px 12px;font-size:12px;color:#2d6e30;margin-top:8px;line-height:1.5;">
+      ✅ El número <strong id="depo-num-ok-txt">76315</strong> está disponible
+      <div style="margin-top:8px;"><button class="btn btn-cgv" style="font-size:11px;padding:9px;margin-bottom:0;" onclick="depoAgregarDesde(document.getElementById('depo-buscar-input').value);goTo('s-deporbono')">Seleccionar este número</button></div>
+    </div>
+    <div id="depo-res-no" style="display:none;background:#fde8e8;border:1.5px solid #a32d2d;border-radius:8px;padding:10px 12px;font-size:12px;color:#a32d2d;margin-top:8px;line-height:1.5;">
+      ❌ Ese número ya no está disponible
+      <div style="margin-top:6px;font-size:11px;color:var(--gris);">Intentá con otro número o explorá los disponibles</div>
+      <div style="margin-top:8px;"><button class="btn btn-naranja" style="font-size:10px;padding:8px;margin-bottom:0;" onclick="goTo('s-depo-grilla')">Ver números disponibles</button></div>
+    </div>
+    <div id="depo-res-fuera" style="display:none;background:#fff3cc;border:1.5px solid var(--naranja);border-radius:8px;padding:10px 12px;font-size:12px;color:#8B6914;margin-top:8px;line-height:1.5;">
+      ⚠️ Ese número no está entre los disponibles para La Eugenia
+      <div style="margin-top:8px;"><button class="btn btn-naranja" style="font-size:10px;padding:8px;margin-bottom:0;" onclick="goTo('s-depo-grilla')">Ver disponibles</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ DEPORBONO — AL AZAR ══ -->
+<div class="screen" id="s-depo-azar">
+  <div class="toldo-interno"><img src="https://i.imgur.com/AlHgkPH.png" alt=""></div>
+  <div class="topbar">
+    <button class="topbar-back" onclick="goTo('s-deporbono')">← Volver</button>
+    <span class="topbar-title">Que el sistema elija</span>
+  </div>
+  <div class="sec-crema" style="flex:1;">
+    <div style="font-size:12px;color:var(--gris);margin-bottom:10px;line-height:1.5;">¿Cuántos bonos querés?</div>
+    <div style="display:flex;gap:8px;align-items:center;margin-bottom:14px;">
+      <input type="number" id="depo-cant" min="1" max="20" value="2" style="width:70px;padding:10px;border:2px solid var(--petroleo);border-radius:8px;font-family:Impact,sans-serif;font-size:20px;color:var(--petroleo);text-align:center;background:var(--blanco);outline:none;">
+      <div style="font-size:11px;color:var(--gris);line-height:1.5;">Ingresá la cantidad<br>que querés reservar</div>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;margin:8px 0;">
+      <div style="font-size:20px;margin-bottom:-2px;line-height:1;">▼</div>
+      <canvas id="depo-ruleta" width="200" height="200" style="border-radius:50%;border:3px solid var(--petroleo);box-shadow:0 0 0 3px var(--lima);"></canvas>
+    </div>
+    <button class="btn btn-naranja" id="depo-btn-girar" onclick="depoGirar()" style="margin-top:10px;">🎲 GIRAR LA RULETA</button>
+    <div id="depo-ruleta-res" style="display:none;background:var(--petroleo);border-radius:10px;padding:12px;text-align:center;margin-top:12px;">
+      <div style="font-size:10px;color:var(--verdecl);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;">El sistema te propone</div>
+      <div id="depo-prop-nums" style="font-family:Impact,sans-serif;font-size:18px;color:var(--lima);letter-spacing:2px;margin-bottom:4px;line-height:1.3;"></div>
+      <div style="font-size:9px;color:var(--verdecl);line-height:1.4;">Estos números no quedan reservados hasta que confirmes el pedido</div>
+      <div style="display:flex;gap:8px;margin-top:10px;">
+        <button class="btn btn-cgv" style="margin-bottom:0;font-size:11px;padding:10px;" onclick="depoUsarPropuesta()">Usar estos números →</button>
+        <button class="btn btn-lima-out" style="margin-bottom:0;font-size:11px;padding:10px;" onclick="depoGirar()">Girar de nuevo</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ DEPORBONO — DATOS ══ -->
+<div class="screen" id="s-depo-datos">
+  <div class="toldo-interno"><img src="https://i.imgur.com/AlHgkPH.png" alt=""></div>
+  <div class="topbar">
+    <button class="topbar-back" onclick="goTo('s-deporbono')">← Volver</button>
+    <span class="topbar-title">Datos para la reserva</span>
+  </div>
+  <div class="sec-crema" style="flex:1;">
+    <div id="depo-selbar-datos" style="background:var(--verdecl);border:2px solid var(--petroleo);border-radius:10px;padding:12px 14px;margin-bottom:14px;"></div>
+    <div style="font-size:11px;color:var(--gris);margin-bottom:12px;line-height:1.5;">Necesitamos estos datos para asociar los números elegidos a tu pedido y completar el registro oficial</div>
+    <div class="form-group"><label class="form-label">Nombre y apellido <span class="req">*</span></label><input class="form-input" type="text" id="depo-nombre" placeholder="Ej: María González" autocomplete="name"></div>
+    <div class="form-group"><label class="form-label">DNI <span class="req">*</span></label><input class="form-input" type="number" id="depo-dni" placeholder="Ej: 28329663"><div class="form-hint">Requerido para el registro oficial del Deporbono</div></div>
+    <div class="form-group"><label class="form-label">Número de lote <span class="req">*</span></label><input class="form-input" type="text" id="depo-lote" placeholder="Ej: M08" maxlength="3"></div>
+    <div class="form-group"><label class="form-label">Teléfono <span class="req">*</span></label><input class="form-input" type="tel" id="depo-tel" placeholder="Ej: 3764 123456"><div class="form-hint">Solo para contactarte si hay algún inconveniente</div></div>
+    <button class="btn btn-naranja" onclick="goTo('s-depo-pago')">Continuar →</button>
+  </div>
+</div>
+
+<!-- ══ DEPORBONO — PAGO ══ -->
+<div class="screen" id="s-depo-pago">
+  <div class="toldo-interno"><img src="https://i.imgur.com/AlHgkPH.png" alt=""></div>
+  <div class="topbar">
+    <button class="topbar-back" onclick="goTo('s-depo-datos')">← Volver</button>
+    <span class="topbar-title">Pago y retiro</span>
+  </div>
+  <div class="sec-crema" style="flex:1;">
+    <div id="depo-selbar-pago" style="background:var(--verdecl);border:2px solid var(--petroleo);border-radius:10px;padding:12px 14px;margin-bottom:14px;"></div>
+    <div class="pago-opt selected" id="depo-po-ef" onclick="depoSelPago('ef')">
+      <div class="pago-radio on" id="depo-pr-ef"></div>
+      <div><div class="pago-titulo">Pago en garita</div><div class="pago-desc">Tus números quedan reservados por 7 días — abonás y retirás el talón físico del Deporbono en garita</div></div>
+    </div>
+    <div class="pago-opt" id="depo-po-tr" onclick="depoSelPago('tr')">
+      <div class="pago-radio" id="depo-pr-tr"></div>
+      <div><div class="pago-titulo">Transferencia bancaria</div><div class="pago-desc">Transferís el importe, mandás el comprobante a garita y retirás el talón cuando quieras</div></div>
+    </div>
+    <button class="btn btn-naranja" onclick="depoConfirmar()">Confirmar reserva →</button>
+  </div>
+</div>
+
+<!-- ══ DEPORBONO — TICKET ══ -->
+<div class="screen" id="s-depo-ticket">
+  <div class="toldo-interno"><img src="https://i.imgur.com/AlHgkPH.png" alt=""></div>
+  <div class="topbar">
+    <button class="topbar-back" onclick="goTo('s-home')">← Volver al inicio</button>
+    <span class="topbar-title">Tu reserva</span>
+  </div>
+  <div class="sec-petroleo" style="flex:1;padding:20px 16px;">
+    <div style="text-align:center;margin-bottom:12px;">
+      <img src="https://i.imgur.com/hIB6KQL.png" style="width:48px;height:48px;object-fit:contain;margin-bottom:6px;display:block;margin-left:auto;margin-right:auto;">
+      <div style="font-family:Impact,sans-serif;font-size:15px;color:var(--lima);letter-spacing:1px;">¡Tu reserva fue generada!</div>
+      <div style="font-size:11px;color:var(--verdecl);margin-top:2px;">Guardá este ticket o enviátelo por WhatsApp para mostrárselo al guardia</div>
+    </div>
+    <div style="background:var(--blanco);border-radius:12px;padding:18px;margin-bottom:12px;text-align:center;position:relative;overflow:hidden;">
+      <div style="position:absolute;left:0;right:0;bottom:0;height:4px;background:repeating-linear-gradient(90deg,var(--lima) 0,var(--lima) 8px,var(--petroleo) 8px,var(--petroleo) 16px);"></div>
+      <div style="font-size:10px;color:var(--gris);letter-spacing:1px;margin-bottom:6px;">La Eugenia · Club de Campo</div>
+      <img src="https://i.imgur.com/as0SOAO.png" style="width:100px;display:block;margin:0 auto 2px;">
+      <div style="font-family:Roboto,sans-serif;font-size:10px;font-weight:700;color:var(--lima);letter-spacing:2px;text-transform:uppercase;background:var(--petroleo);padding:2px 10px;border-radius:4px;display:inline-block;margin-bottom:10px;">DEPORBONO 2026</div>
+      <div style="font-size:10px;color:var(--gris);letter-spacing:1px;text-transform:uppercase;margin-bottom:2px;">Número de reserva</div>
+      <div id="depo-ticket-num" style="font-family:Impact,sans-serif;font-size:26px;color:var(--petroleo);letter-spacing:2px;margin-bottom:6px;">DP N° 000001</div>
+      <div style="display:inline-block;background:var(--lima);color:var(--petroleo);font-size:9px;font-weight:700;letter-spacing:2px;padding:3px 12px;border-radius:20px;margin-bottom:12px;">RESERVADO</div>
+      <div style="font-size:10px;color:var(--gris);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Bonos reservados</div>
+      <div id="depo-ticket-bonos" style="display:flex;gap:5px;flex-wrap:wrap;justify-content:center;margin-bottom:12px;"></div>
+      <div style="border:none;border-top:1px dashed #ddd;margin:10px 0;"></div>
+      <div id="depo-ticket-detalle" style="text-align:left;font-size:11px;color:var(--gris);line-height:1.9;"></div>
+      <div style="margin-top:10px;font-size:9px;color:var(--gris);line-height:1.4;">El talón físico se retira en garita al momento del pago · Sorteo: 4 de diciembre de 2026</div>
+    </div>
+    <div style="background:var(--verdecl);border-radius:10px;padding:12px;font-size:12px;color:var(--petroleo);line-height:1.6;margin-bottom:10px;">
+      ⚠️ Tus números están reservados — si necesitás cancelar, hacelo antes de salir de esta pantalla o acercate a garita en persona
+    </div>
+    <button class="btn btn-naranja" id="depo-btn-wsp" style="font-size:12px;">📲 Enviarme los datos por WhatsApp</button>
+    <button class="btn btn-garita" id="depo-btn-garita" style="margin-top:10px;">Escribir a garita</button>
+  </div>
+</div>
+
+<!-- ══ DEPORBONO — PREMIOS ══ -->
+<div class="screen" id="s-premios">
+  <div class="toldo-interno"><img src="https://i.imgur.com/AlHgkPH.png" alt=""></div>
+  <div class="topbar">
+    <button class="topbar-back" onclick="goTo('s-home')">← Volver al inicio</button>
+    <span class="topbar-title">Premios</span>
+  </div>
+  <div class="sec-crema" style="flex:1;">
+    <div style="text-align:center;margin-bottom:12px;">
+      <img src="https://i.imgur.com/as0SOAO.png" style="width:100px;display:block;margin:0 auto 4px;">
+      <div style="font-family:Roboto,sans-serif;font-size:11px;font-weight:700;color:var(--petroleo);letter-spacing:2px;text-transform:uppercase;">DEPORBONO</div>
+      <div style="font-family:Impact,sans-serif;font-size:20px;color:var(--naranja);letter-spacing:2px;">2026</div>
+    </div>
+    <div style="background:var(--petroleo);border-radius:8px;padding:10px 12px;text-align:center;margin-bottom:12px;">
+      <div style="font-size:10px;color:var(--verdecl);margin-bottom:2px;text-transform:uppercase;letter-spacing:1px;">Fecha del sorteo</div>
+      <div style="font-family:Impact,sans-serif;font-size:16px;color:var(--lima);letter-spacing:1px;">4 de diciembre de 2026</div>
+      <div style="font-size:9px;color:var(--verdecl);margin-top:3px;">Garantizados por el IPLYC SE</div>
+    </div>
+    <div style="background:var(--blanco);border:1.5px solid var(--petroleo);border-radius:10px;padding:11px 12px;margin-bottom:7px;display:flex;align-items:flex-start;gap:10px;"><div style="font-family:Impact,sans-serif;font-size:18px;color:var(--naranja);letter-spacing:1px;min-width:28px;padding-top:2px;">1°</div><div><div style="font-size:12px;font-weight:700;color:var(--petroleo);line-height:1.3;">Fiat Toro Freedom 1.3 Turbo 4×2</div></div></div>
+    <div style="background:var(--blanco);border:1.5px solid var(--petroleo);border-radius:10px;padding:11px 12px;margin-bottom:7px;display:flex;align-items:flex-start;gap:10px;"><div style="font-family:Impact,sans-serif;font-size:18px;color:var(--naranja);letter-spacing:1px;min-width:28px;padding-top:2px;">2°</div><div><div style="font-size:12px;font-weight:700;color:var(--petroleo);line-height:1.3;">Viaje a Mar del Plata</div><div style="font-size:10px;color:var(--gris);margin-top:2px;line-height:1.4;">2 personas · vuelos · 5 noches · Hotel 4 estrellas con desayuno</div></div></div>
+    <div style="background:var(--blanco);border:1.5px solid var(--petroleo);border-radius:10px;padding:11px 12px;margin-bottom:7px;display:flex;align-items:flex-start;gap:10px;"><div style="font-family:Impact,sans-serif;font-size:18px;color:var(--naranja);letter-spacing:1px;min-width:28px;padding-top:2px;">3°</div><div><div style="font-size:12px;font-weight:700;color:var(--petroleo);line-height:1.3;">Estadía en Puerto Iguazú</div><div style="font-size:10px;color:var(--gris);margin-top:2px;line-height:1.4;">2 personas · 2 noches · Hotel 4 estrellas con desayuno</div></div></div>
+    <div style="background:var(--blanco);border:1.5px solid var(--petroleo);border-radius:10px;padding:11px 12px;margin-bottom:7px;display:flex;align-items:flex-start;gap:10px;"><div style="font-family:Impact,sans-serif;font-size:18px;color:var(--naranja);letter-spacing:1px;min-width:28px;padding-top:2px;">4°</div><div><div style="font-size:12px;font-weight:700;color:var(--petroleo);line-height:1.3;">Smart TV 50" BGH</div></div></div>
+    <div style="background:var(--blanco);border:1.5px solid var(--petroleo);border-radius:10px;padding:11px 12px;margin-bottom:14px;display:flex;align-items:flex-start;gap:10px;"><div style="font-family:Impact,sans-serif;font-size:18px;color:var(--naranja);letter-spacing:1px;min-width:28px;padding-top:2px;">5°</div><div><div style="font-size:12px;font-weight:700;color:var(--petroleo);line-height:1.3;">Bicicleta MTB Rodado 29</div></div></div>
+    <button class="btn btn-naranja" onclick="goTo('s-deporbono')">Elegir mi número →</button>
+  </div>
+</div>
+
 <script>
   var carrito = [];
   var pedNum  = 1;
@@ -857,6 +1106,214 @@
   }
 
   function soloNumeros(el) { el.value = el.value.replace(/[^0-9]/g,''); }
+
+  // ══ DEPORBONO JS ══
+  var depoSeleccion = [];
+  var depoPropuesta = [];
+  var depoGirando = false;
+  var depoAngulo = 0;
+  var depoPedNum = 1;
+  var depoPagoSel = 'ef';
+
+  var depoNumeros = [
+    {n:'76301',agot:false},{n:'76302',agot:false},{n:'76303',agot:true},
+    {n:'76304',agot:false},{n:'76305',agot:false},{n:'76306',agot:true},
+    {n:'76307',agot:false},{n:'76308',agot:true},{n:'76309',agot:false},
+    {n:'76310',agot:false},{n:'76311',agot:false},{n:'76312',agot:true},
+    {n:'76313',agot:false},{n:'76314',agot:false},{n:'76315',agot:false},
+    {n:'76316',agot:true},{n:'76317',agot:false},{n:'76318',agot:false},
+    {n:'76319',agot:true},{n:'76320',agot:false}
+  ];
+  var depoDisponibles = depoNumeros.filter(function(n){return !n.agot;});
+
+  function depoRenderSelMain() {
+    var ce = document.getElementById('depo-sel-empty');
+    var ci = document.getElementById('depo-sel-items');
+    var ct = document.getElementById('depo-sel-count');
+    if (!ce||!ci||!ct) return;
+    ct.textContent = depoSeleccion.length + ' bono' + (depoSeleccion.length!==1?'s':'');
+    if (depoSeleccion.length===0) { ce.style.display='block'; ci.innerHTML=''; }
+    else {
+      ce.style.display='none';
+      ci.innerHTML = depoSeleccion.map(function(n){
+        return '<div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;"><span style="font-family:Impact,sans-serif;font-size:12px;background:var(--petroleo);color:var(--lima);padding:2px 8px;border-radius:4px;letter-spacing:1px;">'+n+'</span><span style="font-size:11px;color:var(--gris);">Deporbono 2026 · $5.000</span></div>';
+      }).join('');
+      ci.innerHTML += '<div style="font-family:Impact,sans-serif;font-size:15px;color:var(--petroleo);display:flex;justify-content:space-between;border-top:1.5px solid var(--petroleo);padding-top:6px;margin-top:8px;"><span>Total</span><span>$ '+(depoSeleccion.length*5000).toLocaleString('es-AR')+'</span></div>';
+    }
+  }
+
+  function depoRenderSelbar(elId) {
+    var el = document.getElementById(elId);
+    if (!el) return;
+    var html = '<div style="font-family:Impact,sans-serif;font-size:12px;color:var(--petroleo);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;"><span>Mi selección</span><span style="font-size:10px;font-weight:400;font-family:Roboto,sans-serif;">'+depoSeleccion.length+' bono'+(depoSeleccion.length!==1?'s':'')+'</span></div>';
+    if (depoSeleccion.length===0) html += '<div style="font-size:11px;color:var(--gris);text-align:center;padding:4px 0;">Todavía no elegiste ningún número</div>';
+    else {
+      html += depoSeleccion.map(function(n){
+        return '<div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;"><span style="font-family:Impact,sans-serif;font-size:12px;background:var(--petroleo);color:var(--lima);padding:2px 8px;border-radius:4px;letter-spacing:1px;">'+n+'</span><span style="font-size:11px;color:var(--gris);">Deporbono 2026 · $5.000</span></div>';
+      }).join('');
+      html += '<div style="font-family:Impact,sans-serif;font-size:15px;color:var(--petroleo);display:flex;justify-content:space-between;border-top:1.5px solid var(--petroleo);padding-top:6px;margin-top:8px;"><span>Total</span><span>$ '+(depoSeleccion.length*5000).toLocaleString('es-AR')+'</span></div>';
+    }
+    el.innerHTML = html;
+  }
+
+  function depoRenderGrilla() {
+    var g = document.getElementById('depo-nums-grid');
+    if (!g) return;
+    g.innerHTML = '';
+    depoNumeros.forEach(function(num) {
+      var d = document.createElement('div');
+      var sel = depoSeleccion.indexOf(num.n) >= 0;
+      d.style.cssText = 'aspect-ratio:1;border-radius:7px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:'+(num.agot?'default':'pointer')+';border:'+(num.agot?'1.5px solid #bbb':'1.5px solid var(--petroleo)')+';background:'+(sel?'var(--lima)':num.agot?'#e8e8e8':'var(--hueso)')+';transition:all .12s;';
+      d.innerHTML = '<span style="font-family:Impact,sans-serif;font-size:11px;color:'+(num.agot?'#aaa':'var(--petroleo)')+';'+(num.agot?'text-decoration:line-through':'')+';letter-spacing:.5px;">'+num.n+'</span>'+(sel?'<small style="font-size:7px;color:var(--petroleo);">✓</small>':num.agot?'<small style="font-size:7px;color:#aaa;">Agotado</small>':'');
+      if (!num.agot) d.onclick = function(){ depoToggleNum(num.n, d); };
+      g.appendChild(d);
+    });
+    depoRenderGridSel();
+  }
+
+  function depoToggleNum(n, el) {
+    var idx = depoSeleccion.indexOf(n);
+    if (idx>=0) depoSeleccion.splice(idx,1);
+    else depoSeleccion.push(n);
+    depoRenderGrilla();
+  }
+
+  function depoRenderGridSel() {
+    var ce = document.getElementById('depo-grid-empty');
+    var ci = document.getElementById('depo-grid-items');
+    var ct = document.getElementById('depo-grid-count');
+    var cto = document.getElementById('depo-grid-total');
+    var cm = document.getElementById('depo-grid-monto');
+    var cb = document.getElementById('depo-grid-btn');
+    if (ct) ct.textContent = depoSeleccion.length+' bono'+(depoSeleccion.length!==1?'s':'');
+    if (depoSeleccion.length===0) {
+      if(ce)ce.style.display='block'; if(ci)ci.innerHTML='';
+      if(cto)cto.style.display='none'; if(cb)cb.style.display='none';
+    } else {
+      if(ce)ce.style.display='none';
+      if(ci)ci.innerHTML=depoSeleccion.map(function(n){return '<div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;"><span style="font-family:Impact,sans-serif;font-size:12px;background:var(--petroleo);color:var(--lima);padding:2px 8px;border-radius:4px;letter-spacing:1px;">'+n+'</span><span style="font-size:11px;color:var(--gris);">Deporbono 2026</span></div>';}).join('');
+      if(cto){cto.style.display='flex';}
+      if(cm)cm.textContent='$ '+(depoSeleccion.length*5000).toLocaleString('es-AR');
+      if(cb)cb.style.display='block';
+    }
+  }
+
+  function depoAgregarDesde(n) {
+    n = String(n).trim();
+    if (n && depoSeleccion.indexOf(n)<0) depoSeleccion.push(n);
+  }
+
+  function depoBuscar() {
+    var v = document.getElementById('depo-buscar-input').value.trim();
+    document.getElementById('depo-res-ok').style.display='none';
+    document.getElementById('depo-res-no').style.display='none';
+    document.getElementById('depo-res-fuera').style.display='none';
+    var encontrado = depoNumeros.find(function(n){return n.n===v;});
+    if (!encontrado) { document.getElementById('depo-res-fuera').style.display='block'; return; }
+    if (encontrado.agot) { document.getElementById('depo-res-no').style.display='block'; return; }
+    document.getElementById('depo-num-ok-txt').textContent = v;
+    document.getElementById('depo-res-ok').style.display='block';
+  }
+
+  var depoColores = ['#135457','#c4df57','#deaf4d','#b7d6b5','#135457','#c4df57','#deaf4d','#b7d6b5'];
+  function depoDibujarRuleta(ang) {
+    var canvas = document.getElementById('depo-ruleta');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d'), cx=100,cy=100,r=95,n=8,slice=Math.PI*2/n;
+    ctx.clearRect(0,0,200,200);
+    for (var i=0;i<n;i++) {
+      ctx.beginPath();ctx.moveTo(cx,cy);ctx.arc(cx,cy,r,ang+i*slice,ang+(i+1)*slice);ctx.closePath();
+      ctx.fillStyle=depoColores[i];ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=1.5;ctx.stroke();
+      ctx.save();ctx.translate(cx,cy);ctx.rotate(ang+(i+0.5)*slice);
+      ctx.fillStyle='#fff';ctx.font='bold 11px Roboto,sans-serif';ctx.textAlign='center';ctx.fillText('?',r*0.6,4);ctx.restore();
+    }
+    ctx.beginPath();ctx.arc(cx,cy,14,0,Math.PI*2);ctx.fillStyle='#fff';ctx.fill();ctx.strokeStyle='#135457';ctx.lineWidth=2;ctx.stroke();
+  }
+
+  function depoGirar() {
+    if (depoGirando) return;
+    depoGirando = true;
+    document.getElementById('depo-ruleta-res').style.display='none';
+    document.getElementById('depo-btn-girar').textContent='Girando...';
+    var dur=2500,inicio=Date.now(),angIni=depoAngulo,vueltas=(3+Math.random()*4)*Math.PI*2;
+    function anim() {
+      var t=(Date.now()-inicio)/dur;
+      if(t>=1){t=1;depoGirando=false;document.getElementById('depo-btn-girar').textContent='🎲 GIRAR DE NUEVO';}
+      depoAngulo=angIni+(1-Math.pow(1-t,3))*vueltas;
+      depoDibujarRuleta(depoAngulo);
+      if(t<1){requestAnimationFrame(anim);}
+      else{
+        var cant=Math.min(parseInt(document.getElementById('depo-cant').value)||2,depoDisponibles.length);
+        depoPropuesta=[];var copia=depoDisponibles.slice();
+        for(var i=0;i<cant;i++){var ri=Math.floor(Math.random()*copia.length);depoPropuesta.push(copia[ri].n);copia.splice(ri,1);}
+        document.getElementById('depo-prop-nums').textContent=depoPropuesta.join(' · ');
+        document.getElementById('depo-ruleta-res').style.display='block';
+      }
+    }
+    requestAnimationFrame(anim);
+  }
+
+  function depoUsarPropuesta() {
+    depoPropuesta.forEach(function(n){if(depoSeleccion.indexOf(n)<0)depoSeleccion.push(n);});
+    goTo('s-deporbono');
+  }
+
+  function depoSelPago(tipo) {
+    depoPagoSel = tipo;
+    ['ef','tr'].forEach(function(t){
+      document.getElementById('depo-po-'+t).classList.toggle('selected',t===tipo);
+      document.getElementById('depo-pr-'+t).classList.toggle('on',t===tipo);
+    });
+  }
+
+  function depoConfirmar() {
+    var num = 'DP N° ' + String(depoPedNum).padStart(6,'0'); depoPedNum++;
+    var nombre = document.getElementById('depo-nombre').value.trim() || '—';
+    var dni    = document.getElementById('depo-dni').value.trim() || '—';
+    var lote   = document.getElementById('depo-lote').value.trim() || '—';
+    var total  = depoSeleccion.length * 5000;
+    var d = new Date(); d.setDate(d.getDate()+(depoPagoSel==='ef'?7:0));
+    var vence = d.getDate().toString().padStart(2,'0')+'/'+(d.getMonth()+1).toString().padStart(2,'0')+'/'+d.getFullYear();
+
+    document.getElementById('depo-ticket-num').textContent = num;
+    var bonosEl = document.getElementById('depo-ticket-bonos');
+    bonosEl.innerHTML = depoSeleccion.map(function(n){
+      return '<span style="font-family:Impact,sans-serif;font-size:13px;background:var(--petroleo);color:var(--lima);padding:4px 9px;border-radius:6px;letter-spacing:1px;">'+n+'</span>';
+    }).join('');
+    document.getElementById('depo-ticket-detalle').innerHTML =
+      '<div style="display:flex;justify-content:space-between;margin-bottom:3px;"><strong style="color:var(--petroleo);">Total</strong><strong style="color:var(--petroleo);">$ '+total.toLocaleString('es-AR')+'</strong></div>'+
+      '<div style="display:flex;justify-content:space-between;margin-bottom:3px;"><span>Socio</span><strong style="color:var(--petroleo);">'+nombre+' · Lote '+lote+'</strong></div>'+
+      '<div style="display:flex;justify-content:space-between;margin-bottom:3px;"><span>DNI</span><strong style="color:var(--petroleo);">'+dni+'</strong></div>'+
+      '<div style="display:flex;justify-content:space-between;margin-bottom:3px;"><span>Pago</span><strong style="color:var(--petroleo);">'+(depoPagoSel==='ef'?'Efectivo en garita':'Transferencia')+'</strong></div>'+
+      '<div style="display:flex;justify-content:space-between;"><span>Reservado hasta</span><strong style="color:var(--petroleo);">'+vence+'</strong></div>';
+
+    var bonosTexto = depoSeleccion.join(', ');
+    document.getElementById('depo-btn-wsp').onclick = function(){
+      var msg = '🎫 *Deporbono 2026 — Club de Campo La Eugenia*\n\nReserva: *'+num+'*\nSocio: '+nombre+' · Lote '+lote+'\nDNI: '+dni+'\nBonos: '+bonosTexto+'\nTotal: $'+total.toLocaleString('es-AR')+'\nPago: '+(depoPagoSel==='ef'?'Efectivo en garita':'Transferencia')+'\nReservado hasta: '+vence+'\n\nMostrá este número al guardia al retirar 👆';
+      window.location.href='https://wa.me/?text='+encodeURIComponent(msg);
+    };
+    document.getElementById('depo-btn-garita').onclick = function(){
+      var msg='Hola, tengo una consulta sobre mi reserva Deporbono *'+num+'*.\nSoy '+nombre+', Lote '+lote+'.';
+      window.location.href='https://wa.me/5493764113300?text='+encodeURIComponent(msg);
+    };
+
+    depoSeleccion = [];
+    goTo('s-depo-ticket');
+  }
+
+  // Inicializar ruleta cuando se entra a la pantalla
+  var _goToOrig = goTo;
+  goTo = function(id) {
+    _goToOrig(id);
+    if (id==='s-depo-azar') depoDibujarRuleta(depoAngulo);
+    if (id==='s-depo-grilla') depoRenderGrilla();
+    if (id==='s-deporbono') depoRenderSelMain();
+    if (id==='s-depo-datos') depoRenderSelbar('depo-selbar-datos');
+    if (id==='s-depo-pago') depoRenderSelbar('depo-selbar-pago');
+  };
+
 </script>
 </body>
 </html>
+
+<!-- Nota: pantallas Deporbono se agregarán aquí -->
