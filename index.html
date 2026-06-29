@@ -1141,7 +1141,7 @@
     else {
       html += depoSeleccion.map(function(n){
         var cruz = conCruz
-          ? '<button onclick="depoToggleYRefresh(''+n+'',''+elId+'')" style="background:var(--petroleo);border:none;color:var(--lima);font-size:14px;font-weight:700;cursor:pointer;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;line-height:1;flex-shrink:0;">&#10005;</button>'
+          ? '<button data-n="'+n+'" data-el="'+elId+'" onclick="depoToggleYRefresh(this.dataset.n,this.dataset.el)" style="background:var(--petroleo);border:none;color:var(--lima);font-size:14px;font-weight:700;cursor:pointer;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;line-height:1;flex-shrink:0;">&#10005;</button>'
           : '';
         return '<div style="display:flex;align-items:center;gap:8px;margin-bottom:5px;">' +
           '<span style="font-family:Impact,sans-serif;font-size:14px;background:var(--petroleo);color:var(--lima);padding:3px 10px;border-radius:4px;letter-spacing:1px;flex-shrink:0;">'+n+'</span>' +
